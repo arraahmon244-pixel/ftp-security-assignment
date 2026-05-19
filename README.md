@@ -1,106 +1,61 @@
-# ftp-security-assignment
-A practical cybersecurity assignment exploring FTP (File Transfer Protocol), including real-world enumeration, attack techniques (brute force, anonymous access), and defensive measures with command-line examples using Nmap and FTP.
-## 🧪 Practical Demonstration (Command Examples)
+# FTP Security Assignment
 
-This section shows real-world commands used to discover and interact with FTP services.
+##  Overview
 
----
+This repository contains answers and explanations for 20 questions on FTP (File Transfer Protocol), including its functionality, risks, and security best practices.
 
-###  1. Scanning for FTP with Nmap
+The assignment covers:
 
-```bash
-nmap -p 21 -sV 192.168.56.101 
-```
-
-**Explanation:**
-
-* `-p 21` → scans FTP port
-* `-sV` → detects service version
-
-**Sample Output:**
-
-```
-21/tcp open  ftp  vsftpd 3.0.3
-```
+* FTP fundamentals
+* Security weaknesses
+* Common attack techniques
+* Defensive strategies
 
 ---
 
-###  2. Banner Grabbing
+##  Repository Structure
 
-```bash
-nc 192.168.1.1 21
-```
-
-**Output:**
-
-```
-220 (vsFTPd 3.0.3)
-```
+* `answers/ftp_questions.md` → Full detailed answers
+* `assets/` → (Optional) screenshots or supporting files
 
 ---
 
-###  3. Connecting to FTP Server
+##  Learning Objectives
 
-```bash
-ftp 192.168.1.1
-```
+By completing this assignment, you will understand:
 
----
-
-###  4. Anonymous Login Attempt
-
-```bash
-Name: anonymous
-Password: anonymous
-```
+* How FTP works
+* Why FTP is insecure by default
+* How attackers exploit FTP services
+* How to secure file transfer systems
 
 ---
 
-###  5. Listing Files
+##  Key Takeaways
 
-```bash
-ls
-```
-
----
-
-###  6. Downloading a File
-
-```bash
-get backup.zip
-```
+* FTP sends data in plain text → insecure
+* Weak credentials and misconfigurations are major risks
+* Anonymous access can lead to serious data breaches
+* Secure alternatives like SFTP/FTPS should always be used
 
 ---
 
-###  7. Uploading a File
+##  Security Best Practices
 
-```bash
-put shell.php
-```
-
----
-
-###  8. Exiting FTP
-
-```bash
-bye
-```
+* Use SFTP or FTPS instead of FTP
+* Enforce strong passwords and disable anonymous access
+* Apply least privilege permissions
+* Keep systems updated
+* Monitor logs for suspicious activity
 
 ---
 
-###  9. Brute Force Example (Hydra)
+##  Author
 
-```bash
-hydra -l admin -P passwords.txt ftp://192.168.1.1
-```
-
-**Explanation:**
-
-* `-l` → username
-* `-P` → password list
+Your Name: ABDURRAHMON IDRIS
 
 ---
 
-## ⚠️ Ethical Note
+##  Submission
 
-All commands are for educational purposes only and should be used in authorized lab environments.
+This repository was created as part of a cybersecurity assignment on FTP security.
